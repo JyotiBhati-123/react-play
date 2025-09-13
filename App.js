@@ -1,34 +1,58 @@
-{
-  /* <div id="parent">
-    <div id="child">
-        <h1>I'm h1 tag</h1>
-        <h2>I'm h2 tag</h2>
-    </div>
-        <div id="child">
-        <h1>I'm h1 tag</h1>
-        <h2>I'm h2 tag</h2>
-    </div>
-</div> */
-  // ReactElement(Object) => HTML(Browser Understands)
-}
+import React, { Component } from "react";
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Hello React, I'm H1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "Hello React, I'm H1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
-]);
+// React.createElement => ReactElement(JS Object) => HTMLElement(render)
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading", xyz: "abc" },
-  "Hello World From React"
+// JSX (transpiled before it reaches the JS engine) - Parcel => Babel
+
+// JSX => Babel transpiles it to React.createElement => ReactElement(JS object) => HTMLElement(render)
+const Title = () => (
+  <h1 className="heading" tabIndex="1">
+    Namaste React using JSX 🚀
+  </h1>
 );
-console.log(parent);
+
+// React Components
+// Class Based Component - old
+// Functional Component - new
+const SideBar2 = function () {
+  return <h3>SIdebar</h3>;
+};
+
+const SideBar = () => {
+  return <div>I am a sidebar</div>;
+};
+
+const elem = <span>React Element</span>;
+const number = 100;
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    <SideBar2 />
+    {footer} {number} {90 + 10}
+    <h1 className="header">React Functional Component</h1>
+  </div>
+);
+
+const heading = (
+  <div>
+    <h1>Namaste react 🚀</h1>
+    <HeadingComponent />
+    {SideBar()}
+  </div>
+);
+
+const footer = React.createElement(
+  "h2",
+  { id: "footer" },
+  "this is the footer"
+);
+
+const e = React.createElement;
+
+const mainHeading = e("h1", null, "Helllooo");
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+// root.render(jsxHeading);
+root.render(mainHeading);
