@@ -16,7 +16,7 @@ const Header = () => {
   useEffect(() => {}, [userStatus]);
 
   return (
-    <div className="flex justify-between bg-amber-200 border-b-blue-950 shadow-2xs lg:bg-green-300 lg:bg-cyan-100">
+    <div className="flex justify-between bg-amber-200 border-b-blue-950 shadow-2xs lg:bg-gray-400 lg:bg-cyan-100">
       <div className="logo-container">
         <img className="w-35" src={LOGO_URL} />
       </div>
